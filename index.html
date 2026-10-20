@@ -459,6 +459,10 @@
             $("#mode").bind("change", () => {
                 const mode = $("#mode option:selected").val()
                 if (mode === "receiver") {
+                    $("#peer").removeAttr("disabled")
+                    $("#peer").removeClass("disabled")
+                    if ($("#peer").val() === "")
+                        $("#peer").val("P01")
                     $("#name").attr("disabled", "disabled")
                     $("#name").addClass("disabled")
                     $("#name").val("")
